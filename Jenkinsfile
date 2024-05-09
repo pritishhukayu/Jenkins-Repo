@@ -31,7 +31,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image using the Dockerfile in Repo A
-                sh 'docker build -t myrepo/myimage -f Jenkins-Repo/Dockerfile Jenkins-Repo'
+                sh 'docker build -t myrepo/myimage .'
             }
         }
         // Add more stages for testing or deploying repo B here
