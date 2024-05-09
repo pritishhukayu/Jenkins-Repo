@@ -1,12 +1,19 @@
 pipeline {
     agent any
-    
     stages {
-        stage('Print Message') {
+        stage('Build') {
             steps {
-                script {
-                    echo "IT'S OKAY"
-                }
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
