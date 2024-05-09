@@ -22,6 +22,12 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/pritishhukayu/jenkinstest.git']]])
             }
         }
-        // Add more stages for building and testing repo B here
+        stage('Build Docker Image') {
+            steps {
+                // Build the Docker image using the Dockerfile
+                sh 'docker build -t repoB/image .'
+            }
+        }
+        // Add more stages for testing or deploying repo B here
     }
 }
